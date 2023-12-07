@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-def buildImage() {
+def call() {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         sh 'docker build -t abendong/group-pipeline:jma-1.3 .'
